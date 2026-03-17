@@ -1,20 +1,24 @@
 import { motion } from 'framer-motion';
 import { resumeData } from '../data/resumeData';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, X } from 'lucide-react';
 import { useState } from 'react';
+import appScreenshot from '../../public/app-sc.png?url';
 
 export const Projects = () => {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
+  const [selectedProject, setSelectedProject] = useState<any | null>(null);
 
-  // Group projects by category
-  const groupedProjects = resumeData.projects.reduce((acc, project) => {
-    const category = (project as any).category || 'Other';
-    if (!acc[category]) {
-      acc[category] = [];
-    }
-    acc[category].push(project);
+  // Organize projects by category and company
+  const groupedProjects = resumeData.projectsByCompany.reduce((acc, companyGroup) => {
+    companyGroup.projects.forEach(project => {
+      const category = (project as any).category || 'Other';
+      if (!acc[category]) {
+        acc[category] = [];
+      }
+      acc[category].push(project);
+    });
     return acc;
-  }, {} as Record<string, typeof resumeData.projects>);
+  }, {} as Record<string, any[]>);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -71,9 +75,8 @@ export const Projects = () => {
           >
             <motion.h3
               variants={itemVariants}
-              className="text-2xl md:text-3xl font-bold mb-8 text-blue-400 flex items-center"
+              className="text-2xl md:text-3xl font-bold mb-8 text-blue-400"
             >
-              <span className="w-1 h-8 bg-blue-500 mr-3 rounded"></span>
               Professional Projects
             </motion.h3>
 
@@ -90,6 +93,7 @@ export const Projects = () => {
                   project={project}
                   hoveredId={hoveredId}
                   setHoveredId={setHoveredId}
+                  setSelectedProject={setSelectedProject}
                   itemVariants={itemVariants}
                 />
               ))}
@@ -107,9 +111,8 @@ export const Projects = () => {
           >
             <motion.h3
               variants={itemVariants}
-              className="text-2xl md:text-3xl font-bold mb-8 text-purple-400 flex items-center"
+              className="text-2xl md:text-3xl font-bold mb-8 text-purple-400"
             >
-              <span className="w-1 h-8 bg-purple-500 mr-3 rounded"></span>
               Personal Projects
             </motion.h3>
 
@@ -126,6 +129,7 @@ export const Projects = () => {
                   project={project}
                   hoveredId={hoveredId}
                   setHoveredId={setHoveredId}
+                  setSelectedProject={setSelectedProject}
                   itemVariants={itemVariants}
                 />
               ))}
@@ -133,23 +137,35 @@ export const Projects = () => {
           </motion.div>
         )}
       </div>
+
+      {/* Modal for displaying project images */}
+      {selectedProject && (
+        <ImageModal 
+          project={selectedProject} 
+          onClose={() => setSelectedProject(null)} 
+        />
+      )}
     </section>
   );
 };
 
 // Separate component for project card
-const ProjectCard = ({ project, hoveredId, setHoveredId, itemVariants }: any) => (
-  <motion.div
-    variants={itemVariants}
-    onMouseEnter={() => setHoveredId(project.id)}
-    onMouseLeave={() => setHoveredId(null)}
-    className="group"
-  >
+const ProjectCard = ({ project, hoveredId, setHoveredId, setSelectedProject, itemVariants }: any) => {
+  const isFriendLocator = project.name === 'FriendLocator';
+  
+  return (
     <motion.div
-      className="bg-gradient-to-br from-slate-700 to-slate-800 rounded-xl overflow-hidden border border-slate-600 h-full flex flex-col hover:border-blue-500 transition-colors"
-      whileHover={{ y: -5 }}
-      transition={{ duration: 0.3 }}
+      variants={itemVariants}
+      onMouseEnter={() => setHoveredId(project.id)}
+      onMouseLeave={() => setHoveredId(null)}
+      className="group"
     >
+      <motion.div
+        className={`bg-gradient-to-br from-slate-700 to-slate-800 rounded-xl overflow-hidden border border-slate-600 h-full flex flex-col hover:border-blue-500 transition-colors ${isFriendLocator ? 'cursor-pointer' : ''}`}
+        whileHover={{ y: -5 }}
+        transition={{ duration: 0.3 }}
+        onClick={() => isFriendLocator && setSelectedProject(project)}
+      >
       {/* Project Header */}
       <div className="p-6 flex-1 flex flex-col">
         <div className="flex items-start justify-between mb-2">
@@ -167,6 +183,15 @@ const ProjectCard = ({ project, hoveredId, setHoveredId, itemVariants }: any) =>
             >
               <ExternalLink size={20} />
             </motion.a>
+          )}
+          {isFriendLocator && (
+            <motion.div
+              whileHover={{ scale: 1.2 }}
+              className="text-purple-400 hover:text-purple-300 cursor-pointer"
+              title="Click to view project screenshot"
+            >
+              <ExternalLink size={20} />
+            </motion.div>
           )}
         </div>
 
@@ -201,7 +226,7 @@ const ProjectCard = ({ project, hoveredId, setHoveredId, itemVariants }: any) =>
             <motion.span
               key={tech}
               whileHover={{ scale: 1.05 }}
-              className="px-2.5 py-1 bg-blue-500 bg-opacity-15 text-blue-300 text-xs rounded-full border border-blue-500 border-opacity-30 hover:bg-opacity-30 transition-colors"
+              className="px-2.5 py-1 bg-blue-500 bg-opacity-15 text-black text-xs rounded-full border border-blue-500 border-opacity-30 hover:bg-opacity-30 transition-colors"
             >
               {tech}
             </motion.span>
@@ -209,5 +234,48 @@ const ProjectCard = ({ project, hoveredId, setHoveredId, itemVariants }: any) =>
         </div>
       </div>
     </motion.div>
-  </motion.div>
-);
+    </motion.div>
+  );
+};
+
+// Modal component for displaying project images
+const ImageModal = ({ project, onClose }: any) => {
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center p-4"
+      onClick={onClose}
+    >
+      <motion.div
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        exit={{ scale: 0.8, opacity: 0 }}
+        className="bg-slate-900 rounded-xl p-6 max-w-2xl w-full max-h-90vh overflow-auto relative"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors z-10"
+        >
+          <X size={28} />
+        </button>
+
+        <h2 className="text-2xl font-bold text-white mb-4">{project.name}</h2>
+        
+        <div className="rounded-lg overflow-hidden bg-slate-800">
+          <img
+            src={appScreenshot}
+            alt={`${project.name} screenshot`}
+            className="w-full h-auto"
+          />
+        </div>
+
+        <div className="mt-4">
+          <p className="text-gray-300">{project.description}</p>
+        </div>
+      </motion.div>
+    </motion.div>
+  );
+};
