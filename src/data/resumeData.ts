@@ -23,7 +23,7 @@ export const resumeData = {
       location: "India",
       description: "Leading a team in building the ORBCOMM Platform - an industrial IoT and M2M communication system",
       highlights: [
-        "Acted as Module Lead for a team",
+        "Acted as Technical Lead for a team",
         "Architected transition from legacy systems to modern ReactJS",
         "Built interactive dashboards for real-time data visualization",
         "Developed live asset tracking system with Google Maps API",
