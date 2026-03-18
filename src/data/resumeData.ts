@@ -223,7 +223,6 @@ export const resumeData = {
           name: "Device Cloud",
           subtitle: "IoT Device Communication Platform",
           company: "Orbcomm",
-          company: "Orbcomm",
           duration: "March 2015 – Present",
           description: "Platform designed for communicating with IoT devices using binary protocols and monitoring device telemetry, alerts, and operational status in real time.",
           role: "Frontend Developer",
