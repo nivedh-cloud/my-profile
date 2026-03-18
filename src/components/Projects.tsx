@@ -171,6 +171,9 @@ const ProjectCard = ({ project, hoveredId, setHoveredId, setSelectedProject, ite
         <div className="flex items-start justify-between mb-2">
           <div>
             <h3 className="text-xl font-bold text-white mb-1">{project.name}</h3>
+            {project.subtitle && (
+              <p className="text-gray-400 text-sm mb-2 font-light italic">{project.subtitle}</p>
+            )}
             <p className="text-blue-400 text-sm font-semibold">{project.company}</p>
           </div>
           {project.url && (

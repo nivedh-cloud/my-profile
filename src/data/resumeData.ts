@@ -6,7 +6,7 @@ export const resumeData = {
   summary: "Extensive experience in analysis, design and development of websites as a web developer with strong application analysis, design, development, debugging and problem-solving skills. Passionate about creating responsive, high-performance web applications with modern technologies.",
   
   skills: {
-    frontend: ["ReactJs", "HTML5", "CSS3", "JavaScript", "ES6","Zustand", "Redux Toolkit","TypeScript", "HighCharts", "Google Maps API", "Map Clusters","Geo Fences", "D3.js",  "jQuery", "Nodejs","Vite"],
+    frontend: ["ReactJs", "HTML5", "CSS3", "JavaScript", "ES6","Zustand", "Redux Toolkit","TypeScript", "HighCharts", "Google Maps API", "Map Clusters","Geo-Fencing", "D3.js",  "jQuery", "Nodejs","Vite"],
     frameworks: ["Bootstrap", "Tailwind CSS", "Material UI", "Kendo UI"],
     devops: ["Git", "Jira", "Argo", "Github Copilot", "Jenkins", "Agile"],
     backend: ["REST APIs Integration","WebSockets Integration",  "JSON", "AJAX"],
@@ -164,6 +164,7 @@ export const resumeData = {
           id: 1,
           category: "Professional",
           name: "The Orbcomm Platform",
+          subtitle: "Global Asset Tracking and IoT Communication System",
           company: "Orbcomm",
           duration: "March 2015 – Present",
           description: "Leading industrial IoT tracking platform providing real-time visibility for assets globally",
@@ -174,13 +175,14 @@ export const resumeData = {
             "High-performance dashboard handling thousands of IoT devices",
             "Advanced UI components with Kendo UI"
           ],
-          technologies: ["ReactJS", "TypeScript", "Google Maps API", "Rest API Integration", "WebSockets", "Map Clusters", "Drawing Geofences", "Ploting Geofences", "Material UI", "Kendo", "Bootstrap","CSS3", "LESS"],
+          technologies: ["ReactJS", "TypeScript", "Google Maps API", "Rest API Integration", "WebSockets", "Map Clusters", "Geo-Fencing", "Material UI", "Kendo", "Bootstrap","CSS3", "LESS"],
           url: "https://www.orbcomm.com/"
         },
         {
           id: 11,
           category: "Professional",
-          name: "Esolutions2 – Reefer Truck Tracking Platform",
+          name: "Esolutions2",
+          subtitle: "Reefer Truck Tracking Platform",
           company: "Orbcomm",
           duration: "March 2015 – Present",
           description: "IoT-based platform designed for monitoring refrigerated (reefer) trucks used in cold-chain logistics. The system provides real-time visibility into vehicle location, temperature conditions, and fleet operations.",
@@ -199,7 +201,8 @@ export const resumeData = {
         {
           id: 12,
           category: "Professional",
-          name: "FleetEdge – Heavy Equipment Tracking System",
+          name: "FleetEdge",
+          subtitle: "Heavy Equipment Tracking System",
           company: "Orbcomm",
           duration: "March 2015 – Present",
           description: "IoT platform used for tracking and monitoring heavy construction and industrial equipment across multiple locations, providing operational insights and utilization analytics.",
@@ -217,7 +220,9 @@ export const resumeData = {
         {
           id: 13,
           category: "Professional",
-          name: "Device Cloud – IoT Device Communication Platform",
+          name: "Device Cloud",
+          subtitle: "IoT Device Communication Platform",
+          company: "Orbcomm",
           company: "Orbcomm",
           duration: "March 2015 – Present",
           description: "Platform designed for communicating with IoT devices using binary protocols and monitoring device telemetry, alerts, and operational status in real time.",
