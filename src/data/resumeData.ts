@@ -95,7 +95,7 @@ export const resumeData = {
             "Built interactive dashboards for real-time data visualization",
             "Developed live asset tracking system with Google Maps API",
             "Optimized frontend for high-frequency IoT data streams",
-            "Created reusable component libraries using Kendo UI"
+            "Created reusable component libraries using ReactJS and TypeScript"
           ],
           technologies: ["ReactJS", "TypeScript", "HighCharts", "Google Maps API", "Material UI", "Kendo", "Bootstrap", "LESS"]
         }
@@ -175,7 +175,7 @@ export const resumeData = {
             "Real-time asset tracking for Reefers, Cargo, Heavy Equipment & Fleet",
             "Live location updates using Google Maps API",
             "High-performance dashboard handling thousands of IoT devices",
-            "Advanced UI components with Kendo UI"
+            "Advanced UI components with ReactJS and TypeScript",
           ],
           technologies: ["ReactJS", "TypeScript", "Google Maps API", "Rest API Integration", "WebSockets", "Map Clusters", "Geo-Fencing", "Material UI", "Kendo", "Bootstrap","CSS3", "LESS"],
           url: "https://www.orbcomm.com/"
