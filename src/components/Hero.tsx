@@ -53,10 +53,10 @@ export const Hero = () => {
         </motion.p>
 
         <motion.div variants={itemVariants} className="flex gap-4 justify-center flex-wrap mb-12">
-          <a href="mailto:prabhath.jeevan@gmail.com" className="px-8 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold transition-colors">
+          <a href="mailto:prabhath.jeevan@gmail.com" className="backdrop-blur-md bg-blue-600/80 hover:bg-blue-600 px-8 py-3 rounded-lg font-semibold transition-all border border-blue-400/50 hover:shadow-xl shadow-lg">
             Get In Touch
           </a>
-          <a href="#projects" className="px-8 py-3 border-2 border-blue-600 text-blue-400 hover:bg-blue-600 hover:text-white rounded-lg font-semibold transition-colors">
+          <a href="#projects" className="backdrop-blur-md bg-white/10 border-2 border-white/30 text-blue-400 hover:bg-white/20 hover:border-blue-400/50 px-8 py-3 rounded-lg font-semibold transition-all hover:shadow-xl shadow-lg">
             View Work
           </a>
         </motion.div>

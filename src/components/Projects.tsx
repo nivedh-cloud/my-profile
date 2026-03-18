@@ -161,8 +161,8 @@ const ProjectCard = ({ project, hoveredId, setHoveredId, setSelectedProject, ite
       className="group"
     >
       <motion.div
-        className={`bg-gradient-to-br from-slate-700 to-slate-800 rounded-xl overflow-hidden border border-slate-600 h-full flex flex-col hover:border-blue-500 transition-colors ${isFriendLocator ? 'cursor-pointer' : ''}`}
-        whileHover={{ y: -5 }}
+        className={`backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 rounded-2xl overflow-hidden border border-white/20 h-full flex flex-col hover:border-blue-400/50 hover:shadow-2xl transition-all shadow-xl ${isFriendLocator ? 'cursor-pointer' : ''}`}
+        whileHover={{ y: -5, backgroundColor: 'rgba(255, 255, 255, 0.12)' }}
         transition={{ duration: 0.3 }}
         onClick={() => isFriendLocator && setSelectedProject(project)}
       >
@@ -226,7 +226,7 @@ const ProjectCard = ({ project, hoveredId, setHoveredId, setSelectedProject, ite
             <motion.span
               key={tech}
               whileHover={{ scale: 1.05 }}
-              className="px-2.5 py-1 bg-blue-500 bg-opacity-15 text-black text-xs rounded-full border border-blue-500 border-opacity-30 hover:bg-opacity-30 transition-colors"
+              className="px-2.5 py-1 backdrop-blur-md bg-blue-500/20 text-blue-200 text-xs rounded-full border border-blue-400/40 hover:bg-blue-500/30 hover:border-blue-400/60 transition-colors"
             >
               {tech}
             </motion.span>

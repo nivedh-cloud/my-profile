@@ -48,7 +48,7 @@ export const Experience = () => {
           {resumeData.experience.map((job) => (
             <motion.div key={job.id} variants={itemVariants}>
               <motion.div
-                className="bg-gradient-to-r from-slate-800 to-slate-700 rounded-xl overflow-hidden border border-slate-600 hover:border-blue-500 transition-all cursor-pointer"
+                className="backdrop-blur-xl bg-gradient-to-r from-white/10 to-white/5 rounded-2xl overflow-hidden border border-white/20 hover:border-blue-400/50 transition-all cursor-pointer shadow-xl hover:shadow-2xl hover:bg-gradient-to-r hover:from-white/15 hover:to-white/10"
                 onClick={() => setExpandedId(expandedId === job.id ? null : job.id)}
               >
                 <div className="p-6">
@@ -76,7 +76,7 @@ export const Experience = () => {
                     animate={{ height: 'auto', opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.3 }}
-                    className="border-t border-slate-600 px-6 py-4 bg-slate-900 bg-opacity-50"
+                    className="border-t border-white/10 px-6 py-4 backdrop-blur-md bg-white/5"
                   >
                     <p className="text-gray-300 mb-4">{job.description}</p>
                     <div className="mb-4">
@@ -94,7 +94,7 @@ export const Experience = () => {
                       <h4 className="text-sm font-bold text-blue-400 mb-2">Technologies:</h4>
                       <div className="flex flex-wrap gap-2">
                         {job.technologies.map((tech) => (
-                          <span key={tech} className="px-2 py-1 bg-blue-500 bg-opacity-20 text-black text-xs rounded">
+                          <span key={tech} className="px-2 py-1 backdrop-blur-md bg-blue-500/20 text-blue-200 text-xs rounded-full border border-blue-400/30 hover:bg-blue-500/30 transition-colors">
                             {tech}
                           </span>
                         ))}

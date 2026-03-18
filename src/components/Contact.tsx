@@ -63,7 +63,7 @@ export const Contact = () => {
                 key={social.label}
                 variants={itemVariants}
                 href={social.href}
-                className="flex items-center gap-3 px-6 py-3 bg-slate-800 rounded-lg border border-slate-700 hover:border-blue-500 text-gray-300 hover:text-white transition-all hover:bg-slate-700"
+                className="flex items-center gap-3 px-6 py-3 backdrop-blur-md bg-white/10 rounded-2xl border border-white/20 text-gray-300 hover:text-white transition-all hover:bg-white/20 hover:border-blue-400/50 shadow-lg hover:shadow-xl"
                 whileHover={{ scale: 1.05, y: -2 }}
                 target={social.href.startsWith('mailto') || social.href.startsWith('tel') ? undefined : '_blank'}
                 rel={social.href.startsWith('mailto') || social.href.startsWith('tel') ? undefined : 'noopener noreferrer'}

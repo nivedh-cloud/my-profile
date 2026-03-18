@@ -6,7 +6,7 @@ export const resumeData = {
   summary: "Extensive experience in analysis, design and development of websites as a web developer with strong application analysis, design, development, debugging and problem-solving skills. Passionate about creating responsive, high-performance web applications with modern technologies.",
   
   skills: {
-    frontend: ["ReactJs", "HTML5", "CSS3", "JavaScript", "ES6","Zustand", "Redux Toolkit","TypeScript", "HighCharts", "Google Maps API", "Map Clusters","Geo Fences", "D3.js",  "jQuery", "Nodejs","Vite", "ExtJS"],
+    frontend: ["ReactJs", "HTML5", "CSS3", "JavaScript", "ES6","Zustand", "Redux Toolkit","TypeScript", "HighCharts", "Google Maps API", "Map Clusters","Geo Fences", "D3.js",  "jQuery", "Nodejs","Vite"],
     frameworks: ["Bootstrap", "Tailwind CSS", "Material UI", "Kendo UI"],
     devops: ["Git", "Jira", "Argo", "Github Copilot", "Jenkins", "Agile"],
     backend: ["REST APIs Integration","WebSockets Integration",  "JSON", "AJAX"],

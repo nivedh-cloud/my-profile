@@ -50,7 +50,7 @@ export const Skills = () => {
             <motion.div
               key={category.category}
               variants={itemVariants}
-              className="bg-slate-700 rounded-xl p-6 border border-slate-600 hover:border-blue-500 transition-colors"
+              className="backdrop-blur-xl bg-white/10 rounded-2xl p-6 border border-white/20 hover:border-blue-400/50 transition-all shadow-xl hover:shadow-2xl hover:bg-white/15"
             >
               <h3 className="text-xl font-bold text-blue-400 mb-4">{category.category}</h3>
               <div className="flex flex-wrap gap-2">
@@ -61,7 +61,7 @@ export const Skills = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: idx * 0.05, duration: 0.3 }}
                     viewport={{ once: true }}
-                    className="px-3 py-1 bg-slate-600 text-sm rounded-full text-gray-200 hover:bg-blue-600 cursor-default transition-colors"
+                    className="px-3 py-1 backdrop-blur-md bg-white/10 text-sm rounded-full text-gray-200 hover:bg-white/20 cursor-default transition-colors border border-white/20 hover:border-blue-400/50"
                   >
                     {skill}
                   </motion.span>

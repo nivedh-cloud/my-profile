@@ -62,7 +62,7 @@ export const Navigation = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className="fixed top-0 w-full bg-slate-900 bg-opacity-95 backdrop-blur-md border-b border-slate-700 z-50"
+      className="fixed top-0 w-full bg-slate-900/70 backdrop-blur-xl border-b border-white/10 z-50 shadow-lg"
     >
       <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
         <motion.div
@@ -100,7 +100,7 @@ export const Navigation = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 + navItems.length * 0.1 }}
-            className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all font-medium"
+            className="flex items-center gap-2 px-4 py-2 backdrop-blur-md bg-gradient-to-r from-blue-500/80 to-purple-600/80 text-white rounded-lg hover:from-blue-500 hover:to-purple-600 transition-all font-medium border border-blue-400/50 shadow-lg hover:shadow-xl"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -126,14 +126,14 @@ export const Navigation = () => {
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: 'auto' }}
           exit={{ opacity: 0, height: 0 }}
-          className="md:hidden bg-slate-800 border-t border-slate-700"
+          className="md:hidden backdrop-blur-xl bg-white/10 border-t border-white/10"
         >
           <div className="px-4 py-4 space-y-2">
             {navItems.map((item) => (
               <motion.a
                 key={item.name}
                 href={item.href}
-                className="block px-4 py-2 text-gray-300 hover:text-blue-400 hover:bg-slate-700 rounded-lg transition-colors"
+                className="block px-4 py-2 text-gray-300 hover:text-blue-400 hover:bg-white/10 rounded-lg transition-colors"
                 onClick={(e) => {
                   if (item.href.startsWith('#') && item.href !== '#') {
                     e.preventDefault();
@@ -152,7 +152,7 @@ export const Navigation = () => {
                 handleDownloadResume();
                 setIsOpen(false);
               }}
-              className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all font-medium mt-4"
+              className="w-full flex items-center justify-center gap-2 px-4 py-2 backdrop-blur-md bg-gradient-to-r from-blue-500/80 to-purple-600/80 text-white rounded-lg hover:from-blue-500 hover:to-purple-600 transition-all font-medium mt-4 border border-blue-400/50 shadow-lg"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.95 }}
             >
