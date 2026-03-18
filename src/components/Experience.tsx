@@ -59,7 +59,7 @@ export const Experience = () => {
                         <h3 className="text-xl font-bold text-white">{job.position}</h3>
                       </div>
                       <p className="text-blue-400 font-semibold mb-1">{job.company}</p>
-                      <p className="text-sm text-gray-700">{job.duration}</p>
+                      <p className="text-sm text-gray-300">{job.duration}</p>
                     </div>
                     <motion.div
                       animate={{ rotate: expandedId === job.id ? 90 : 0 }}
@@ -78,12 +78,12 @@ export const Experience = () => {
                     transition={{ duration: 0.3 }}
                     className="border-t border-slate-600 px-6 py-4 bg-slate-900 bg-opacity-50"
                   >
-                    <p className="text-gray-700 mb-4">{job.description}</p>
+                    <p className="text-gray-300 mb-4">{job.description}</p>
                     <div className="mb-4">
                       <h4 className="text-sm font-bold text-blue-400 mb-2">Key Contributions:</h4>
                       <ul className="space-y-1">
                         {job.highlights.map((highlight, idx) => (
-                          <li key={idx} className="text-sm text-gray-700 flex items-start">
+                          <li key={idx} className="text-sm text-gray-300 flex items-start">
                             <span className="text-blue-400 mr-2">▸</span>
                             {highlight}
                           </li>
@@ -94,7 +94,7 @@ export const Experience = () => {
                       <h4 className="text-sm font-bold text-blue-400 mb-2">Technologies:</h4>
                       <div className="flex flex-wrap gap-2">
                         {job.technologies.map((tech) => (
-                          <span key={tech} className="px-2 py-1 bg-blue-500 bg-opacity-20 text-blue-500 text-xs rounded">
+                          <span key={tech} className="px-2 py-1 bg-blue-500 bg-opacity-20 text-grey-300 text-xs rounded">
                             {tech}
                           </span>
                         ))}
