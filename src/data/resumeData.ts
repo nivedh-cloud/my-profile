@@ -181,7 +181,7 @@ export const resumeData = {
         {
           id: 11,
           category: "Professional",
-          name: "Esolutions2",
+          name: "eSolutions-2",
           subtitle: "Reefer Truck Tracking Platform",
           company: "Orbcomm",
           duration: "March 2015 – Present",
@@ -201,7 +201,7 @@ export const resumeData = {
         {
           id: 12,
           category: "Professional",
-          name: "FleetEdge",
+          name: "FleetEdge-4",
           subtitle: "Heavy Equipment Tracking System",
           company: "Orbcomm",
           duration: "March 2015 – Present",
