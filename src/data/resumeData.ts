@@ -4,7 +4,7 @@ export const resumeData = {
   phone: "+91 9966429688",
   headline: "Frontend Developer (React) with 10+ Years Experience",
   tagline: "Technical Lead | React Developer | 10+ Years Experience | Building Scalable UI & Dashboards",
-  experienceHeadline: "React Frontend Developer with 10+ years of experience building scalable, high-performance web applications and real-time dashboards. Skilled in modern JavaScript (ES6+), component-driven architecture, and data visualization. Experienced in developing reusable UI components, responsive web applications, optimizing performance, and delivering clean, maintainable solutions in fast-paced product environments.",
+  experienceHeadline: "                  Senior React Frontend Developer with 10+ years of experience building scalable, high-performance web and mobile applications and real-time dashboards. Skilled in modern JavaScript (ES6+), Specialized in the React ecosystem and Hybrid Mobile Development using Capacitor. Proven track record of leading technical teams at top-tier companies like Orbcomm component-driven architecture, and data visualization. Experienced in developing reusable UI components, responsive web applications, optimizing performance, and delivering clean, maintainable solutions in fast-paced product environments.",
   summary: "Extensive experience in analysis, design and development of websites as a web developer with strong application analysis, design, development, debugging and problem-solving skills. Passionate about creating responsive, high-performance web applications with modern technologies.",
   
   skills: {
