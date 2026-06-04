@@ -14,46 +14,21 @@ export const Navigation = () => {
   ];
 
   const handleDownloadResume = async () => {
+    const baseUrl = String(import.meta.env.BASE_URL || '/');
+    const normalizedBaseUrl = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
+    const fileUrl = `${window.location.origin}${normalizedBaseUrl}Jeevan_Prabhath_Senior_React_Dev.pdf`;
+    console.debug('Resume download URL:', fileUrl);
+
     try {
-      // Get the base path from the current location
-      const basePath = window.location.pathname.split('/jeevan-resume')[0] + '/jeevan-resume';
-      const fileUrl = basePath + '/Jeevan_Prabhath_Senior_React_Dev.pdf';
-
-      // Try to use File System Access API for folder selection (modern browsers)
-      if ('showSaveFilePicker' in window) {
-        try {
-          const handle = await (window as any).showSaveFilePicker({
-            suggestedName: 'Jeevan_Prabhath_Senior_React_Dev.pdf',
-            types: [{ description: 'PDF Files', accept: { 'application/pdf': ['.pdf'] } }],
-          });
-
-          const response = await fetch(fileUrl);
-          if (!response.ok) throw new Error('Failed to fetch file');
-          
-          const blob = await response.blob();
-          const writable = await handle.createWritable();
-          await writable.write(blob);
-          await writable.close();
-        } catch (error: any) {
-          // If user cancels file picker or an error occurs, use fallback
-          if (error.name === 'AbortError') {
-            return; // User cancelled
-          }
-          throw error;
-        }
-      } else {
-        // Fallback: simple download to browser's default downloads folder
-        const link = document.createElement('a');
-        link.href = fileUrl;
-        link.download = 'Jeevan_Prabhath_Senior_React_Dev.pdf';
-        link.setAttribute('target', '_blank');
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-      }
-    } catch (error) {
-      console.error('Download failed:', error);
-      alert('Failed to download resume. Please try again.');
+      const link = document.createElement('a');
+      link.href = fileUrl;
+      link.download = 'Jeevan_Prabhath_Senior_React_Dev.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } catch (error: any) {
+      console.error('Download failed:', error, { fileUrl });
+      alert(`Failed to download resume. ${error?.message || 'Please try again.'}`);
     }
   };
 
