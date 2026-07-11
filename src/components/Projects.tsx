@@ -342,11 +342,11 @@ const ImageModal = ({ project, onClose }: any) => {
 
         <h2 className="text-2xl font-bold text-white mb-4">{project.name}</h2>
         
-        <div className="rounded-lg overflow-hidden bg-slate-800">
+        <div className="rounded-lg overflow-hidden bg-slate-800 px-2 py-2 sm:px-4 sm:py-3">
           <img
             src={appScreenshot}
             alt={`${project.name} screenshot`}
-            className="w-full h-auto"
+            className="w-full h-auto rounded-md"
           />
         </div>
 
