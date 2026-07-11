@@ -3,6 +3,8 @@ import { ChevronDown } from 'lucide-react';
 import { resumeData } from '../data/resumeData';
 
 export const Hero = () => {
+  const heroImage = `${import.meta.env.BASE_URL}jeevan-img.jpeg`;
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -32,12 +34,12 @@ export const Hero = () => {
         animate="visible"
       >
         <motion.div variants={itemVariants} className="mb-6">
-          <div className="w-48 h-48 mx-auto mb-6 rounded-full bg-gradient-to-br from-blue-400 to-purple-600 p-1">
-            {/* <img 
-              src="/jeevan-resume/jeevan-img.jpeg" 
-              alt="P Jeevan Prabhath" 
+          <div className="w-48 h-48 mx-auto mb-6 rounded-full bg-gradient-to-br from-blue-400 to-purple-600 p-1 overflow-hidden">
+            <img
+              src={heroImage}
+              alt="P Jeevan Prabhath"
               className="w-full h-full rounded-full object-cover"
-            /> */}
+            />
           </div>
         </motion.div>
 
