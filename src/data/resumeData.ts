@@ -1,7 +1,7 @@
 export const resumeData = {
   name: "P Jeevan Prabhath",
   email: "prabhath.jeevan@gmail.com",
-  phone: "+91 7780539688",
+  phone: "+91 7981599688",
   headline: "Frontend Developer (React) with 10+ Years Experience",
   tagline: "Technical Lead | React Developer | 10+ Years Experience | Building Scalable UI & Dashboards",
   experienceHeadline: "Senior React Frontend Developer with 10+ years of experience building scalable, high-performance web and mobile applications and real-time dashboards. Skilled in modern JavaScript (ES6+), specialized in the React ecosystem and Hybrid Mobile Development using Capacitor. Proven track record of leading technical teams at top-tier companies like Orbcomm with component-driven architecture and data visualization. Leveraging AI-assisted development workflows (Cursor AI & GitHub Copilot) to accelerate product delivery, shifting focus from boilerplate coding to high-level system architecture and robust UI/UX design. Experienced in developing reusable UI components, responsive web applications, optimizing performance, and delivering clean, maintainable solutions in fast-paced product environments.",
