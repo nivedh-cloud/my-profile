@@ -2,6 +2,10 @@ import { motion } from 'framer-motion';
 import { resumeData } from '../data/resumeData';
 
 export const Skills = () => {
+  const categoryNames: Record<string, string> = {
+    backend: 'Backend & Cloud',
+  };
+
   const formatCategory = (key: string) => {
     const withSpaces = key.replace(/([A-Z])/g, ' $1');
     return withSpaces
@@ -14,7 +18,7 @@ export const Skills = () => {
   };
 
   const skillCategories = Object.entries(resumeData.skills).map(([category, skills]) => ({
-    category: formatCategory(category),
+    category: categoryNames[category] ?? formatCategory(category),
     skills: skills as string[]
   }));
 

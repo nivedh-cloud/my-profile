@@ -9,11 +9,13 @@ export const resumeData = {
   
   skills: {
     frontend: ["ReactJs", "HTML5", "CSS3", "JavaScript", "ES6+", "Zustand", "Redux Toolkit", "TypeScript", "Capacitor", "HighCharts", "Vite", "Google Maps API", "Eslint", "D3.js", "Nodejs", "Tailwind CSS", "Material UI"],
+    backend: ["REST APIs Integration","WebSockets Integration",  "JSON", "AJAX", "PostgreSQL", "Firebase", "Cloud SQL", "Google BigQuery", "Google Cloud Run", "Google Pub/Sub"],
     aiPoweredDevTools: ["Cursor AI", "GitHub Copilot", "GitHub Copilot Workspace", "LLM Prompts Integration"],
+    Mobile: ["Capacitor", "lonic","PWA", "Responsive Design", "Cross-browser Compatibility", "UI/UX Design"],
     devops: ["Git", "Jira", "Argo", "Jenkins", "Agile"],
-    backend: ["REST APIs Integration","WebSockets Integration",  "JSON", "AJAX"],
-    tools: ["Visual Studio", "Visual Studio Code", "WebStorm", "Cursor","IntelliJ IDEA", "Photoshop", "Adobe Suite", "Figma"],
-    other: ["Responsive Design", "Cross-browser Compatibility", "UI/UX Design", "Test"]
+    
+    tools: ["Visual Studio", "Visual Studio Code", "WebStorm", "Cursor","IntelliJ IDEA", "Photoshop", "Adobe Suite", "Figma"]
+    
   },
 
   experience: [
