@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion';
 import { resumeData } from '../data/resumeData';
 import { ExternalLink, X } from 'lucide-react';
+import { useState } from 'react';
+import { SectionHeading } from './SectionHeading';
+import appScreenshot from '../../public/app-sc.png?url';
 
 const PlayStoreIcon = ({ size = 20 }: { size?: number }) => (
   <svg
@@ -57,8 +60,6 @@ const PlayStoreIcon = ({ size = 20 }: { size?: number }) => (
     </g>
   </svg>
 );
-import { useState } from 'react';
-import appScreenshot from '../../public/app-sc.png?url';
 
 export const Projects = () => {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
@@ -112,17 +113,9 @@ export const Projects = () => {
   };
 
   return (
-    <section id="projects" className="py-20 px-4 bg-slate-800/30 border-b border-cyan-500/30">
+    <section id="projects" className="py-24 px-4 relative">
       <div className="max-w-6xl mx-auto">
-        <motion.h2
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-bold mb-16 text-center gradient-text"
-        >
-          Notable Projects
-        </motion.h2>
+        <SectionHeading kicker="Selected work" title="Notable Projects" />
 
         {/* Personal Projects Section */}
         {personalProjects.length > 0 && (
@@ -135,7 +128,7 @@ export const Projects = () => {
           >
             <motion.h3
               variants={itemVariants}
-              className="text-2xl md:text-3xl font-bold mb-8 text-purple-400"
+              className="font-display text-xl md:text-2xl font-semibold mb-7 text-violet-200"
             >
               Personal Projects
             </motion.h3>
@@ -171,7 +164,7 @@ export const Projects = () => {
           >
             <motion.h3
               variants={itemVariants}
-              className="text-2xl md:text-3xl font-bold mb-8 text-blue-400"
+              className="font-display text-xl md:text-2xl font-semibold mb-7 text-sky-200"
             >
               Professional Projects
             </motion.h3>
@@ -221,7 +214,7 @@ const ProjectCard = ({ project, hoveredId, setHoveredId, setSelectedProject, ite
       className="group"
     >
       <motion.div
-        className={`backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 rounded-2xl overflow-hidden border border-white/20 h-full flex flex-col hover:border-blue-400/50 hover:shadow-2xl transition-all shadow-xl ${isFriendLocator ? 'cursor-pointer' : ''}`}
+        className={`glass-card rounded-2xl overflow-hidden h-full flex flex-col ${isFriendLocator ? 'cursor-pointer' : ''}`}
         whileHover={{ y: -5, backgroundColor: 'rgba(255, 255, 255, 0.12)' }}
         transition={{ duration: 0.3 }}
         onClick={() => isFriendLocator && setSelectedProject(project)}
@@ -230,11 +223,11 @@ const ProjectCard = ({ project, hoveredId, setHoveredId, setSelectedProject, ite
       <div className="p-6 flex-1 flex flex-col">
         <div className="flex items-start justify-between mb-2">
           <div>
-            <h3 className="text-xl font-bold text-white mb-1">{project.name}</h3>
+            <h3 className="font-display text-xl font-bold text-white mb-1">{project.name}</h3>
             {project.subtitle && (
-              <p className="text-gray-400 text-sm mb-2 font-light italic">{project.subtitle}</p>
+              <p className="text-slate-400 text-sm mb-2 italic">{project.subtitle}</p>
             )}
-            <p className="text-blue-400 text-sm font-semibold">{project.company}</p>
+            <p className="text-cyan-300 text-sm font-medium">{project.company}</p>
           </div>
           <div className="flex items-center gap-2">
             {project.url && (
@@ -274,28 +267,20 @@ const ProjectCard = ({ project, hoveredId, setHoveredId, setSelectedProject, ite
         </div>
 
         {/* <p className="text-xs text-gray-400 mb-3">{project.duration}</p> */}
-        <p className="text-gray-300 text-sm mb-4 flex-1">{project.description}</p>
+        <p className="text-slate-300 text-sm mb-4 flex-1 leading-relaxed">{project.description}</p>
 
-        {/* Highlights */}
         {project.highlights && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{
-              opacity: hoveredId === project.id ? 1 : 0,
-              height: hoveredId === project.id ? 'auto' : 0,
-            }}
-            transition={{ duration: 0.3 }}
-            className="mb-4 overflow-hidden"
-          >
-            <ul className="space-y-1 pb-3 border-b border-slate-600">
-              {project.highlights.map((highlight: string, idx: number) => (
-                <li key={idx} className="text-xs text-gray-300 flex items-start">
-                  <span className="text-blue-400 mr-2">▸</span>
-                  {highlight}
-                </li>
-              ))}
-            </ul>
-          </motion.div>
+          <ul className="space-y-1.5 mb-4 pb-4 border-b border-white/10">
+            {project.highlights.slice(0, hoveredId === project.id ? project.highlights.length : 3).map((highlight: string, idx: number) => (
+              <li key={idx} className="text-xs text-slate-300 flex items-start leading-relaxed">
+                <span className="text-cyan-300 mr-2">▸</span>
+                {highlight}
+              </li>
+            ))}
+            {hoveredId !== project.id && project.highlights.length > 3 && (
+              <li className="text-xs text-slate-500 pl-4">Hover to see more</li>
+            )}
+          </ul>
         )}
 
         {/* Technologies */}
@@ -304,7 +289,7 @@ const ProjectCard = ({ project, hoveredId, setHoveredId, setSelectedProject, ite
             <motion.span
               key={tech}
               whileHover={{ scale: 1.05 }}
-              className="px-2.5 py-1 backdrop-blur-md bg-blue-500/20 text-blue-200 text-xs rounded-full border border-blue-400/40 hover:bg-blue-500/30 hover:border-blue-400/60 transition-colors"
+              className="chip"
             >
               {tech}
             </motion.span>
@@ -323,14 +308,14 @@ const ImageModal = ({ project, onClose }: any) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center p-4"
+      className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
       onClick={onClose}
     >
       <motion.div
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.8, opacity: 0 }}
-        className="bg-slate-900 rounded-xl p-6 max-w-2xl w-full max-h-90vh overflow-auto relative"
+        className="glass-card rounded-2xl p-6 max-w-2xl w-full max-h-[90vh] overflow-auto relative"
         onClick={(e) => e.stopPropagation()}
       >
         <button

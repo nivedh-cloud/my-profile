@@ -2,7 +2,7 @@ import { Navigation, Hero, Experience, Skills, Projects, Contact, AnimatedBackgr
 
 function App() {
   return (
-    <div className="w-full overflow-hidden bg-slate-900 relative">
+    <div className="w-full overflow-hidden bg-[#050816] relative">
       <AnimatedBackground />
       <div className="relative z-10">
         <Navigation />

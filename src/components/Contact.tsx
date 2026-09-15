@@ -1,15 +1,14 @@
 import { motion } from 'framer-motion';
 import { Mail, Phone, Linkedin, Github } from 'lucide-react';
 import { resumeData } from '../data/resumeData';
+import { SectionHeading } from './SectionHeading';
 
 export const Contact = () => {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
+      transition: { staggerChildren: 0.1 },
     },
   };
 
@@ -30,7 +29,7 @@ export const Contact = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-b from-slate-900 to-slate-950">
+    <section className="py-24 px-4">
       <motion.div
         className="max-w-4xl mx-auto text-center"
         variants={containerVariants}
@@ -38,23 +37,18 @@ export const Contact = () => {
         whileInView="visible"
         viewport={{ once: true }}
       >
-        <motion.h2
-          variants={itemVariants}
-          className="text-4xl md:text-5xl font-bold mb-6 gradient-text"
-        >
-          Let's Connect
-        </motion.h2>
+        <SectionHeading kicker="Say hello" title="Let's Connect" />
 
         <motion.p
           variants={itemVariants}
-          className="text-lg text-gray-300 mb-12 max-w-2xl mx-auto"
+          className="text-lg text-slate-300 mb-10 max-w-2xl mx-auto leading-relaxed"
         >
-          I'm always interested in learning about new projects and opportunities. Whether you have a project in mind or just want to reach out, feel free to contact me.
+          I am always interested in learning about new projects and opportunities. Whether you have a project in mind or just want to reach out, feel free to contact me.
         </motion.p>
 
         <motion.div
           variants={containerVariants}
-          className="flex flex-wrap justify-center gap-6 mb-16"
+          className="flex flex-wrap justify-center gap-4 mb-10"
         >
           {socialLinks.map((social) => {
             const Icon = social.icon;
@@ -63,12 +57,12 @@ export const Contact = () => {
                 key={social.label}
                 variants={itemVariants}
                 href={social.href}
-                className="flex items-center gap-3 px-6 py-3 backdrop-blur-md bg-white/10 rounded-2xl border border-white/20 text-gray-300 hover:text-white transition-all hover:bg-white/20 hover:border-blue-400/50 shadow-lg hover:shadow-xl"
-                whileHover={{ scale: 1.05, y: -2 }}
+                className="glass-card flex items-center gap-3 px-5 py-3 rounded-2xl text-slate-200 hover:text-white"
+                whileHover={{ scale: 1.04, y: -2 }}
                 target={social.href.startsWith('mailto') || social.href.startsWith('tel') ? undefined : '_blank'}
                 rel={social.href.startsWith('mailto') || social.href.startsWith('tel') ? undefined : 'noopener noreferrer'}
               >
-                <Icon size={20} />
+                <Icon size={18} />
                 <span>{social.label}</span>
               </motion.a>
             );
@@ -77,20 +71,17 @@ export const Contact = () => {
 
         <motion.div
           variants={itemVariants}
-          className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg p-8"
+          className="glass-card rounded-2xl p-8 max-w-xl mx-auto"
         >
-          <p className="text-white text-sm mb-4">
-            📧 Email me directly at <span className="font-bold">{resumeData.email}</span>
+          <p className="text-slate-200 text-sm mb-3">
+            Email me at <span className="font-semibold text-white">{resumeData.email}</span>
           </p>
-          <p className="text-white text-sm">
-            📞 Call me at <span className="font-bold">{resumeData.phone}</span>
+          <p className="text-slate-200 text-sm">
+            Call me at <span className="font-semibold text-white">{resumeData.phone}</span>
           </p>
         </motion.div>
 
-        <motion.p
-          variants={itemVariants}
-          className="text-gray-500 text-sm mt-12"
-        >
+        <motion.p variants={itemVariants} className="text-slate-500 text-sm mt-12">
           © 2026 P Jeevan Prabhath. All rights reserved.
         </motion.p>
       </motion.div>

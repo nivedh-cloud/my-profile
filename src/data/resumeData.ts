@@ -4,12 +4,16 @@ export const resumeData = {
   phone: "+91 7981599688",
   headline: "Frontend Developer (React) with 10+ Years Experience",
   tagline: "Technical Lead | React Developer | 10+ Years Experience | Building Scalable UI & Dashboards",
-  experienceHeadline: "Senior React Frontend Developer with 10+ years of experience building scalable, high-performance web and mobile applications and real-time dashboards. Skilled in modern JavaScript (ES6+), specialized in the React ecosystem and Hybrid Mobile Development using Capacitor. Proven track record of leading technical teams at top-tier companies like Orbcomm with component-driven architecture and data visualization. Leveraging AI-assisted development workflows (Cursor AI & GitHub Copilot) to accelerate product delivery, shifting focus from boilerplate coding to high-level system architecture and robust UI/UX design. Experienced in developing reusable UI components, responsive web applications, optimizing performance, and delivering clean, maintainable solutions in fast-paced product environments.",
+  experienceHeadline: {
+    prefix: "Highly accomplished ",
+    highlight: "Senior Frontend Lead & AI-Native Full-Stack Engineer",
+    suffix: " with 10 years of expertise architecting robust, scalable client-side systems and intelligent applications. Deeply skilled in optimizing development throughput, streamlining front-end workflows, and integrating LLM APIs, RAG pipelines, and vector databases into modern web and mobile apps. Recognized for elite execution speed, modernizing legacy systems, and seamlessly deploying cross-platform architectures that elevate overall software delivery metrics and product performance."
+  },
   summary: "Extensive experience in analysis, design and development of websites as a web developer with strong application analysis, design, development, debugging and problem-solving skills. Passionate about creating responsive, high-performance web applications with modern technologies.",
   
   skills: {
-    frontend: ["ReactJs", "HTML5", "CSS3", "JavaScript", "ES6+", "Zustand", "Redux Toolkit", "TypeScript", "Capacitor", "HighCharts", "Vite", "Google Maps API", "Eslint", "D3.js", "Nodejs", "Tailwind CSS", "Material UI"],
-    backend: ["REST APIs Integration","WebSockets Integration",  "JSON", "AJAX", "PostgreSQL", "Firebase", "Cloud SQL", "Google BigQuery", "Google Cloud Run", "Google Pub/Sub"],
+    frontend: ["ReactJs", "HTML5", "CSS3", "JavaScript", "REST APIs Integration","WebSockets Integration", "JSON", "AJAX", "GraphQL", "ES6+", "Zustand", "Redux Toolkit", "TypeScript", "Capacitor", "HighCharts", "Vite", "Google Maps API", "Eslint", "D3.js", "Nodejs", "Tailwind CSS", "Material UI"],
+    backend: [ "PostgreSQL", "No Sql", "Firebase", "Cloud SQL", "Google BigQuery", "Google Cloud Run", "Google Pub/Sub"],
     aiPoweredDevTools: ["Cursor AI", "GitHub Copilot", "GitHub Copilot Workspace", "LLM Prompts Integration"],
     Mobile: ["Capacitor", "lonic","PWA", "Responsive Design", "Cross-browser Compatibility", "UI/UX Design"],
     devops: ["Git", "Jira", "Argo", "Jenkins", "Agile"],

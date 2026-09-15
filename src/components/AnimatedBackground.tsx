@@ -20,7 +20,7 @@ const colors = [
 
 export const AnimatedBackground = () => {
   // Generate random particles
-  const particles: Particle[] = Array.from({ length: 60 }, (_, i) => {
+  const particles: Particle[] = Array.from({ length: 28 }, (_, i) => {
     const color = colors[i % colors.length];
     return {
       id: i,
@@ -36,7 +36,7 @@ export const AnimatedBackground = () => {
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none">
       {/* Gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(56,189,248,0.12),_transparent_45%),radial-gradient(ellipse_at_bottom_right,_rgba(139,92,246,0.14),_transparent_40%),linear-gradient(180deg,#050816_0%,#070b1a_100%)]" />
       
       {/* Animated particles */}
       {particles.map((particle) => {

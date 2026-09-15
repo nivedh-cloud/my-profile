@@ -2,17 +2,16 @@ import { motion } from 'framer-motion';
 import { resumeData } from '../data/resumeData';
 import { ChevronRight } from 'lucide-react';
 import { useState } from 'react';
+import { SectionHeading } from './SectionHeading';
 
 export const Experience = () => {
-  const [expandedId, setExpandedId] = useState<number | null>(0);
+  const [expandedId, setExpandedId] = useState<number | null>(resumeData.experience[0]?.id ?? null);
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
+      transition: { staggerChildren: 0.1 },
     },
   };
 
@@ -26,87 +25,88 @@ export const Experience = () => {
   };
 
   return (
-    <section id="experience" className="py-20 px-4 bg-slate-800/30 border-b border-blue-500/30">
+    <section id="experience" className="py-24 px-4 relative">
       <div className="max-w-4xl mx-auto">
-        <motion.h2
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-bold mb-16 text-center gradient-text"
-        >
-          Experience
-        </motion.h2>
+        <SectionHeading kicker="Career path" title="Experience" />
 
         <motion.div
-          className="space-y-4"
+          className="relative space-y-4 before:absolute before:left-[11px] before:top-3 before:bottom-3 before:w-px before:bg-gradient-to-b before:from-cyan-400/50 before:via-violet-400/30 before:to-transparent md:before:left-[13px]"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {resumeData.experience.map((job) => (
-            <motion.div key={job.id} variants={itemVariants}>
-              <motion.div
-                className="backdrop-blur-xl bg-gradient-to-r from-white/10 to-white/5 rounded-2xl overflow-hidden border border-white/20 hover:border-blue-400/50 transition-all cursor-pointer shadow-xl hover:shadow-2xl hover:bg-gradient-to-r hover:from-white/15 hover:to-white/10"
-                onClick={() => setExpandedId(expandedId === job.id ? null : job.id)}
-              >
-                <div className="p-6">
-                  <div className="flex items-start justify-between">
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-2">
-                        <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-                        <h3 className="text-xl font-bold text-white">{job.position}</h3>
-                      </div>
-                      {job.company && (
-                        <p className="text-blue-400 font-semibold mb-1">{job.company}</p>
-                      )}
-                      <p className="text-sm text-gray-300">{job.duration}</p>
-                    </div>
-                    <motion.div
-                      animate={{ rotate: expandedId === job.id ? 90 : 0 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <ChevronRight className="text-blue-400" />
-                    </motion.div>
-                  </div>
+          {resumeData.experience.map((job) => {
+            const isOpen = expandedId === job.id;
+            return (
+              <motion.div key={job.id} variants={itemVariants} className="relative pl-8 md:pl-10">
+                <div className="absolute left-0 top-6 h-6 w-6 rounded-full border border-cyan-300/40 bg-[#050816] flex items-center justify-center">
+                  <span className={`h-2.5 w-2.5 rounded-full ${isOpen ? 'bg-cyan-300' : 'bg-slate-500'}`} />
                 </div>
-
-                {expandedId === job.id && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="border-t border-white/10 px-6 py-4 backdrop-blur-md bg-white/5"
-                  >
-                    <p className="text-gray-300 mb-4">{job.description}</p>
-                    <div className="mb-4">
-                      <h4 className="text-sm font-bold text-blue-400 mb-2">Key Contributions:</h4>
-                      <ul className="space-y-1">
-                        {job.highlights.map((highlight, idx) => (
-                          <li key={idx} className="text-sm text-gray-300 flex items-start">
-                            <span className="text-blue-400 mr-2">▸</span>
-                            {highlight}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-bold text-blue-400 mb-2">Technologies:</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {job.technologies.map((tech) => (
-                          <span key={tech} className="px-2 py-1 backdrop-blur-md bg-blue-500/20 text-blue-200 text-xs rounded-full border border-blue-400/30 hover:bg-blue-500/30 transition-colors">
-                            {tech}
-                          </span>
-                        ))}
+                <motion.div
+                  className={`glass-card rounded-2xl overflow-hidden cursor-pointer transition-all ${isOpen ? 'ring-1 ring-cyan-400/30' : ''}`}
+                  onClick={() => setExpandedId(isOpen ? null : job.id)}
+                >
+                  <div className="p-6">
+                    <div className="flex items-start justify-between gap-4">
+                      <div className="flex-1">
+                        <h3 className="font-display text-lg md:text-xl font-bold text-white leading-snug">
+                          {job.position}
+                        </h3>
+                        {job.company && (
+                          <p className="text-cyan-300 font-medium mt-1">{job.company}</p>
+                        )}
+                        <p className="text-sm text-slate-400 mt-1">{job.duration}</p>
                       </div>
+                      <motion.div
+                        animate={{ rotate: isOpen ? 90 : 0 }}
+                        transition={{ duration: 0.25 }}
+                        className="mt-1 shrink-0"
+                      >
+                        <ChevronRight className="text-cyan-300" />
+                      </motion.div>
                     </div>
-                  </motion.div>
-                )}
+                  </div>
+
+                  {isOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      transition={{ duration: 0.28 }}
+                      className="border-t border-white/10 px-6 py-5 bg-white/[0.03]"
+                    >
+                      <p className="text-slate-300 mb-4 leading-relaxed">{job.description}</p>
+                      <div className="mb-5">
+                        <h4 className="text-xs tracking-wider uppercase text-cyan-300/90 mb-3">
+                          Key Contributions
+                        </h4>
+                        <ul className="space-y-2">
+                          {job.highlights.map((highlight, idx) => (
+                            <li key={idx} className="text-sm text-slate-300 flex items-start leading-relaxed">
+                              <span className="text-cyan-300 mr-2 mt-0.5">▸</span>
+                              {highlight}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div>
+                        <h4 className="text-xs tracking-wider uppercase text-cyan-300/90 mb-3">
+                          Technologies
+                        </h4>
+                        <div className="flex flex-wrap gap-2">
+                          {job.technologies.map((tech) => (
+                            <span key={tech} className="chip">
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </motion.div>
               </motion.div>
-            </motion.div>
-          ))}
+            );
+          })}
         </motion.div>
       </div>
     </section>
