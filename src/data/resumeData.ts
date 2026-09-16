@@ -2,61 +2,62 @@ export const resumeData = {
   name: "P Jeevan Prabhath",
   email: "prabhath.jeevan@gmail.com",
   phone: "+91 7981599688",
-  headline: "Frontend Developer (React) with 10+ Years Experience",
-  tagline: "Technical Lead | React Developer | 10+ Years Experience | Building Scalable UI & Dashboards",
+  headline: "Technical Lead | Frontend Developer | IoT & SCADA Dashboards | React Ecosystem",
+  tagline: "Technical Lead | React Developer | IoT & SCADA | 10+ Years Experience | Industrial Dashboards",
   experienceHeadline: {
     prefix: "Highly accomplished ",
     highlight: "Senior Frontend Lead & AI-Native Full-Stack Engineer",
-    suffix: " with 10 years of expertise architecting robust, scalable client-side systems and intelligent applications. Deeply skilled in optimizing development throughput, streamlining front-end workflows, and integrating LLM APIs, RAG pipelines, and vector databases into modern web and mobile apps. Recognized for elite execution speed, modernizing legacy systems, and seamlessly deploying cross-platform architectures that elevate overall software delivery metrics and product performance."
+    suffix: " with 10 years of expertise architecting robust, scalable client-side systems and intelligent applications. Deeply skilled in industrial IoT (IIoT) and SCADA-style HMI dashboards for real-time telemetry, alarms, device monitoring, and fleet operations. Experienced in optimizing development throughput, streamlining front-end workflows, and integrating LLM APIs, RAG pipelines, and vector databases into modern web and mobile apps. Recognized for elite execution speed, modernizing legacy systems, and seamlessly deploying cross-platform architectures that elevate overall software delivery metrics and product performance."
   },
-  summary: "Extensive experience in analysis, design and development of websites as a web developer with strong application analysis, design, development, debugging and problem-solving skills. Passionate about creating responsive, high-performance web applications with modern technologies.",
+  summary: "Technical Lead specializing in React-based industrial IoT and SCADA-style operator dashboards. Extensive experience delivering real-time telemetry, asset tracking, geo-fencing, alarm visualization, and high-frequency device data UIs for large-scale M2M platforms.",
   
   skills: {
-    frontend: ["ReactJs", "HTML5", "CSS3", "JavaScript", "REST APIs Integration","WebSockets Integration", "JSON", "AJAX", "GraphQL", "ES6+", "Zustand", "Redux Toolkit", "TypeScript", "Capacitor", "HighCharts", "Vite", "Google Maps API", "Eslint", "D3.js", "Nodejs", "Tailwind CSS", "Material UI"],
-    backend: [ "PostgreSQL", "No Sql", "Firebase", "Cloud SQL", "Google BigQuery", "Google Cloud Run", "Google Pub/Sub"],
-    aiPoweredDevTools: ["Cursor AI", "GitHub Copilot", "GitHub Copilot Workspace", "LLM Prompts Integration"],
-    Mobile: ["Capacitor", "lonic","PWA", "Responsive Design", "Cross-browser Compatibility", "UI/UX Design"],
-    devops: ["Git", "Jira", "Argo", "Jenkins", "Agile"],
-    
-    tools: ["Visual Studio", "Visual Studio Code", "WebStorm", "Cursor","IntelliJ IDEA", "Photoshop", "Adobe Suite", "Figma"]
-    
+    frontend: ["ReactJs", "Next.js", "HTML5", "CSS3", "JavaScript", "ES6+", "TypeScript", "Zustand", "Redux Toolkit", "REST APIs Integration", "WebSockets Integration", "JSON", "AJAX", "GraphQL", "Vite", "Eslint", "Nodejs", "Tailwind CSS", "Material UI"],
+    iotScada: ["Industrial IoT (IIoT)", "SCADA Dashboards / HMI", "M2M Communication", "Real-time Telemetry", "Device Monitoring", "Alarm & Event Management", "High-frequency Data Streams", "Asset Tracking", "Fleet Telematics", "Cold-chain / Reefer Monitoring", "Geo-Fencing", "Map Clustering", "Binary Device Protocols"],
+    aiPoweredDevTools: ["Cursor AI", "GitHub Copilot", "GitHub Copilot Workspace", "LLM Prompts Integration", "AI-Assisted Dev"],
+    backend: ["PostgreSQL", "NoSQL", "Firebase", "Cloud SQL", "Google BigQuery", "Google Cloud Run", "Google Pub/Sub", "FastAPI", "Python"],
+    dataAndMapping: ["HighCharts", "Chart.js", "D3.js", "Google Maps API", "Geofencing API", "Map Markers", "Map Clusters", "Leaflet"],
+    Mobile: ["Capacitor", "Ionic", "PWA", "Responsive Design", "Cross-browser Compatibility", "UI/UX Design"],
+    devops: ["Git", "Jira", "Argo", "Jenkins", "CI/CD", "GitHub Actions", "Agile"],
+    tools: ["Visual Studio", "Visual Studio Code", "WebStorm", "Cursor", "IntelliJ IDEA", "Photoshop", "Adobe Suite", "Figma"]
   },
 
   experience: [
     {
       id: 100,
       company: "",
-      position: "Personal Projects – Frontend / Full Stack Developer",
+      position: "Freelancer as Frontend / Full Stack Developer",
       duration: "2026 – Present",
       location: "Self-Initiated",
-      description: "Independently designed, built, and shipped multiple PWAs and full-stack applications spanning AI chat, geographic exploration, biblical history visualization, and real-time GPS tracking.",
+      description: "Independently designed, built, and shipped multiple PWAs and full-stack applications spanning AI chat, World Atlas & Country Info, biblical history visualization, and real-time GPS tracking.",
       highlights: [
+        "World Atlas & Country Info: engineered an interactive world-map PWA/mobile app (React, TypeScript, Ionic 7, Capacitor, Leaflet) with searchable country views, live geospatial analytics, Cloud SQL for relational data, and Google BigQuery for country/geo insights — published on Google Play",
         "AI Personal Assistant: built a PWA chatbot interface with reusable UI components and installable app-like access",
-        "World Atlas & Country Info: developed an interactive world map PWA with searchable country views and responsive layouts",
         "BibleChronos (Bible Trace Maps): delivered a bilingual PWA with dual chronology timelines, animated journey maps, and an interactive genealogy explorer",
         "FriendLocator: shipped a full-stack GPS tracking app with real-time location sharing, geofence alerts, and a responsive dashboard",
-        "Architected component-driven, mobile-first UIs and integrated REST APIs, WebSockets, Google Maps, and Capacitor for native-like experiences",
+        "Architected component-driven, mobile-first UIs and integrated REST APIs, WebSockets, Google Maps, Leaflet, and Capacitor for native-like experiences",
         "Leveraged AI-assisted development workflows (Cursor AI & GitHub Copilot) to accelerate product delivery, shifting focus from boilerplate coding to high-level system architecture and robust UI/UX design."
       ],
-      technologies: ["React", "TypeScript", "JavaScript", "Tailwind CSS", "Capacitor", "PWA", "D3.js", "Google Maps API", "FastAPI", "Python", "MySQL", "REST APIs", "JWT Auth", "i18n", "Cursor AI", "GitHub Copilot"]
+      technologies: ["React", "TypeScript", "JavaScript", "Ionic", "Capacitor", "PWA", "Leaflet", "Google Maps API", "Cloud SQL", "PostgreSQL", "Google BigQuery", "Tailwind CSS", "D3.js", "FastAPI", "Python", "MySQL", "REST APIs", "JWT Auth", "i18n", "Cursor AI", "GitHub Copilot"]
     },
     {
       id: 1,
       company: "Orbcomm India Pvt Ltd",
       position: "Technical Lead – UI",
-      duration: "March 2015 – Present",
+      duration: "March 2015 – February 2026",
       location: "India",
-      description: "Leading a team in building the ORBCOMM Platform - an industrial IoT and M2M communication system",
+      description: "Architected and managed multiple high-scale industrial IoT, SCADA-style HMI, and fleet management platforms. Led multi-disciplinary frontend teams of 12 to 35 members, overseeing engineering cycles and legacy codebase modernization.",
       highlights: [
-        "Acted as Technical Lead for a team",
-        "Architected transition from legacy systems to modern ReactJS",
-        "Built interactive dashboards for real-time data visualization",
-        "Developed live asset tracking system with Google Maps API",
-        "Optimized frontend for high-frequency IoT data streams",
-        "Created reusable component libraries.",
-        "Leveraged AI-assisted development workflows (Cursor AI & GitHub Copilot) to accelerate product delivery, shifting focus from boilerplate coding to high-level system architecture and robust UI/UX design."
+        "Architected industrial IoT (IIoT) and SCADA-style operator dashboards for real-time telemetry, alarms, device health, and fleet visibility",
+        "Spearheaded The Orbcomm Platform core UI for high-frequency IoT data streaming, M2M communication, and control-room style monitoring",
+        "Led frontend tracking for eSolutions-2 and FleetEdge-4 with Google Maps, map clustering, live geo-fencing, and asset utilization views",
+        "Acted as Module Lead for a 17-member Device Cloud team building centralized device interface controls, telemetry, and alert workflows",
+        "Built API Health & Performance Monitor tooling to surface latency, status, and bottlenecks across industrial data APIs",
+        "Developed Auth0 data management utilities for batch user JSON processing and reduced manual administration",
+        "Optimized UI performance for thousands of IoT devices, binary device payloads, and high-frequency data streams",
+        "Leveraged AI-assisted development workflows (Cursor AI & GitHub Copilot) to accelerate delivery while focusing on architecture and robust HMI/UX design"
       ],
-      technologies: ["ReactJS", "TypeScript", "HighCharts", "Google Maps API", "Material UI", "Bootstrap", "LESS", "Figma", "Cursor AI", "GitHub Copilot"]
+      technologies: ["ReactJS", "Next.js", "TypeScript", "Vite", "Zustand", "Redux Toolkit", "HighCharts", "D3.js", "Google Maps API", "WebSockets", "IoT", "SCADA HMI", "Geo-Fencing", "Map Clusters", "Material UI", "LESS", "Cursor AI", "GitHub Copilot"]
     },
     {
       id: 2,
@@ -78,13 +79,14 @@ export const resumeData = {
       position: "UI Developer",
       duration: "January 2012 – July 2012",
       location: "USA",
-      description: "Windows 8 Weather and News App development",
+      description: "UI development for Windows 8 Weather and News — default Microsoft apps serving a global user base of millions.",
       highlights: [
-        "Developed UI for Windows 8 applications",
-        "Worked with 40-member team",
-        "Implemented modern UI patterns"
+        "Designed client layout modules for core native Windows 8 Weather and News applications",
+        "Built Metro/Modern UI patterns for live tiles, panoramic views, and content-heavy news/weather feeds",
+        "Optimized real-time dynamic rendering of weather and news payloads while keeping pixel-perfect layout performance",
+        "Collaborated in a large Microsoft engineering team to ship production UI for a worldwide audience"
       ],
-      technologies: [".NET 2011", "jQuery", "HTML", "CSS", "JavaScript", "TFS"]
+      technologies: [".NET 2011", "jQuery", "HTML5", "CSS3", "JavaScript", "TFS", "Windows 8"]
     },
     {
       id: 6,
@@ -109,19 +111,18 @@ export const resumeData = {
         {
           id: 1,
           position: "Technical Lead – UI",
-          duration: "March 2015 – Present",
+          duration: "March 2015 – February 2026",
           location: "India",
-          description: "Leading a 35-member team in building the ORBCOMM Platform - an industrial IoT and M2M communication system",
+          description: "Architected and managed multiple high-scale industrial IoT, SCADA-style HMI, and fleet management platforms. Led multi-disciplinary frontend teams of 12 to 35 members.",
           highlights: [
-            "Acted as Module Lead for 35-member team",
-            "Architected transition from legacy systems to modern ReactJS",
-            "Built interactive dashboards for real-time data visualization",
-            "Developed live asset tracking system with Google Maps API",
-            "Optimized frontend for high-frequency IoT data streams",
-            "Created reusable component libraries using ReactJS and TypeScript",
-            "Leveraged AI-assisted development workflows (Cursor AI & GitHub Copilot) to accelerate product delivery, shifting focus from boilerplate coding to high-level system architecture and robust UI/UX design."
+            "Architected industrial IoT (IIoT) and SCADA-style operator dashboards for real-time telemetry, alarms, device health, and fleet visibility",
+            "Spearheaded The Orbcomm Platform core UI for high-frequency IoT data streaming and M2M communication",
+            "Led frontend tracking for eSolutions-2 and FleetEdge-4 with Google Maps, clustering, and live geo-fencing",
+            "Acted as Module Lead for a 17-member Device Cloud team building centralized device interface controls",
+            "Optimized UI performance for thousands of IoT devices and high-frequency telemetry streams",
+            "Leveraged AI-assisted development workflows (Cursor AI & GitHub Copilot) to accelerate product delivery"
           ],
-          technologies: ["ReactJS", "TypeScript", "HighCharts", "Google Maps API", "Material UI", "Kendo", "Bootstrap", "LESS", "Cursor AI", "GitHub Copilot"]
+          technologies: ["ReactJS", "Next.js", "TypeScript", "Vite", "Zustand", "Redux Toolkit", "HighCharts", "D3.js", "Google Maps API", "WebSockets", "IoT", "SCADA HMI", "Geo-Fencing", "LESS"]
         }
       ]
     },
@@ -151,13 +152,14 @@ export const resumeData = {
           position: "UI Developer",
           duration: "January 2012 – July 2012",
           location: "USA",
-          description: "Windows 8 Weather and News App development",
+          description: "UI development for Windows 8 Weather and News — default Microsoft apps serving a global user base of millions.",
           highlights: [
-            "Developed UI for Windows 8 applications",
-            "Worked with 40-member team",
-            "Implemented modern UI patterns"
+            "Designed client layout modules for core native Windows 8 Weather and News applications",
+            "Built Metro/Modern UI patterns for live tiles, panoramic views, and content-heavy news/weather feeds",
+            "Optimized real-time dynamic rendering of weather and news payloads while keeping pixel-perfect layout performance",
+            "Collaborated in a large Microsoft engineering team to ship production UI for a worldwide audience"
           ],
-          technologies: [".NET 2011", "jQuery", "HTML", "CSS", "JavaScript", "TFS"]
+          technologies: [".NET 2011", "jQuery", "HTML5", "CSS3", "JavaScript", "TFS", "Windows 8"]
         }
       ]
     },
@@ -274,77 +276,76 @@ export const resumeData = {
           id: 1,
           category: "Professional",
           name: "The Orbcomm Platform",
-          subtitle: "Global Asset Tracking and IoT Communication System",
+          subtitle: "Industrial IoT, SCADA-style HMI & Global Asset Tracking",
           company: "Orbcomm",
-          duration: "March 2015 – Present",
-          description: "Leading industrial IoT tracking platform providing real-time visibility for assets globally",
+          duration: "March 2015 – February 2026",
+          description: "Industrial IoT and M2M platform providing SCADA-style operator visibility for assets worldwide — live location, telemetry, alarms, and high-frequency device streams in a control-room dashboard.",
           role: "Technical Lead – UI",
           highlights: [
-            "Real-time asset tracking for Reefers, Cargo, Heavy Equipment & Fleet",
-            "Live location updates using Google Maps API",
-            "High-performance dashboard handling thousands of IoT devices",
-            "Advanced UI components with ReactJS and TypeScript",
+            "Spearheaded architectural core design of an industrial IoT / SCADA-style HMI dashboard for high-frequency data streaming",
+            "Real-time asset tracking for Reefers, Cargo, Heavy Equipment & Fleet with operator alarm and status views",
+            "Live location, geo-fencing, and map clustering for thousands of connected IoT devices",
+            "Visualized telemetry, device health, and event feeds using React, TypeScript, HighCharts, and WebSockets",
             "Leveraged AI-assisted development workflows (Cursor AI & GitHub Copilot) to accelerate product delivery, shifting focus from boilerplate coding to high-level system architecture and robust UI/UX design."
           ],
-          technologies: ["ReactJS", "TypeScript", "Google Maps API", "Rest API Integration", "WebSockets", "Map Clusters", "Geo-Fencing", "Material UI", "Kendo", "Bootstrap","CSS3", "LESS", "Cursor AI", "GitHub Copilot"],
+          technologies: ["ReactJS", "TypeScript", "IoT", "SCADA HMI", "Google Maps API", "Rest API Integration", "WebSockets", "Map Clusters", "Geo-Fencing", "Telemetry", "Alarms", "Material UI", "Kendo", "CSS3", "LESS", "Cursor AI", "GitHub Copilot"],
           url: "https://www.orbcomm.com/"
         },
         {
           id: 11,
           category: "Professional",
           name: "eSolutions-2",
-          subtitle: "Reefer Truck Tracking Platform",
+          subtitle: "Reefer Truck IoT / Cold-chain SCADA Monitoring",
           company: "Orbcomm",
-          duration: "March 2015 – Present",
-          description: "IoT-based platform designed for monitoring refrigerated (reefer) trucks used in cold-chain logistics. The system provides real-time visibility into vehicle location, temperature conditions, and fleet operations.",
+          duration: "March 2015 – February 2026",
+          description: "IoT platform for refrigerated (reefer) trucks in cold-chain logistics. Delivers SCADA-style monitoring of location, temperature telemetry, alarms, and fleet operations so operators can keep cargo within safe thresholds.",
           role: "Frontend Developer",
           highlights: [
-            "Developed real-time tracking dashboards for monitoring reefer truck locations",
-            "Implemented temperature data visualization to ensure cargo safety",
-            "Integrated Google Maps API for live vehicle tracking and route monitoring",
-            "Built responsive UI using ReactJS, HTML5, CSS3, and Bootstrap",
-            "Consumed and displayed real-time telemetry data from IoT devices",
-            "Ensured cross-browser compatibility and responsive performance"
+            "Built SCADA-style monitoring dashboards for reefer location, temperature telemetry, and cargo safety alarms",
+            "Implemented live temperature and process-value visualization similar to industrial HMI trends",
+            "Integrated Google Maps API for live vehicle tracking, routes, and geo-fence based alerts",
+            "Consumed high-frequency IoT telemetry over REST/WebSockets and rendered it for operator workflows",
+            "Ensured cross-browser compatibility and responsive performance for control-room and field use"
           ],
-          technologies: ["ReactJS", "JavaScript", "Google Maps API", "HTML5", "CSS3", "Bootstrap", "REST APIs"],
+          technologies: ["ReactJS", "JavaScript", "IoT", "SCADA HMI", "Telemetry", "Google Maps API", "HTML5", "CSS3", "Bootstrap", "REST APIs"],
           url: "https://www.orbcomm.com/"
         },
         {
           id: 12,
           category: "Professional",
           name: "FleetEdge-4",
-          subtitle: "Heavy Equipment Tracking System",
+          subtitle: "Heavy Equipment IoT Tracking & Utilization SCADA Views",
           company: "Orbcomm",
-          duration: "March 2015 – Present",
-          description: "IoT platform used for tracking and monitoring heavy construction and industrial equipment across multiple locations, providing operational insights and utilization analytics.",
+          duration: "March 2015 – February 2026",
+          description: "Industrial IoT platform for tracking heavy construction and industrial equipment. Provides SCADA-style operational insights: live location, utilization, status, and analytics across multiple sites.",
           role: "Frontend Developer",
           highlights: [
-            "Developed interactive dashboards for monitoring equipment status and usage",
-            "Built map-based tracking interfaces for real-time equipment location",
-            "Implemented data visualization components for operational analytics",
-            "Handled high-volume device data rendering efficiently in UI",
-            "Ensured responsive design and optimized UI performance"
+            "Developed interactive HMI dashboards for equipment status, utilization, and operational KPIs",
+            "Built map-based tracking interfaces for real-time equipment location and site geo-fences",
+            "Implemented HighCharts visualizations for industrial analytics and trend monitoring",
+            "Handled high-volume IoT device data rendering efficiently in the operator UI",
+            "Ensured responsive design and optimized performance for large device fleets"
           ],
-          technologies: ["ReactJS", "JavaScript", "HighCharts", "Google Maps API", "HTML5", "CSS3", "REST APIs"],
+          technologies: ["ReactJS", "JavaScript", "IoT", "SCADA HMI", "HighCharts", "Google Maps API", "HTML5", "CSS3", "REST APIs"],
           url: "https://www.orbcomm.com/"
         },
         {
           id: 13,
           category: "Professional",
           name: "Device Cloud",
-          subtitle: "IoT Device Communication Platform",
+          subtitle: "IoT Device Communication, Telemetry & Alarm Platform",
           company: "Orbcomm",
-          duration: "March 2015 – Present",
-          description: "Platform designed for communicating with IoT devices using binary protocols and monitoring device telemetry, alerts, and operational status in real time.",
-          role: "Frontend Developer",
+          duration: "March 2015 – February 2026",
+          description: "Centralized industrial IoT platform for communicating with devices over binary protocols and monitoring telemetry, alerts, and operational status in real time — the device-control layer behind SCADA-style operator views.",
+          role: "Frontend Developer / Module Lead",
           highlights: [
-            "Developed UI modules for device monitoring and communication status",
-            "Integrated binary-based device data into frontend dashboards",
-            "Built real-time data visualization components for telemetry and alerts",
-            "Worked closely with backend teams for device communication integration",
-            "Designed scalable UI for handling large-scale IoT device data streams"
+            "Acted as Module Lead for a 17-member team engineering centralized cloud device interface controls",
+            "Developed UI modules for device monitoring, communication status, and alarm/event workflows",
+            "Integrated binary-based IoT device payloads into frontend dashboards and telemetry charts",
+            "Built real-time visualization for telemetry, device health, and operational alerts",
+            "Designed scalable UI for large-scale IoT device data streams using strict state management"
           ],
-          technologies: ["ReactJS", "JavaScript", "REST APIs", "JSON", "HTML5", "CSS3"],
+          technologies: ["ReactJS", "JavaScript", "IoT", "SCADA HMI", "REST APIs", "JSON", "Binary Protocols", "Telemetry", "Alarms", "HTML5", "CSS3"],
           url: "https://www.orbcomm.com/"
         }
       ]
@@ -378,11 +379,19 @@ export const resumeData = {
           id: 2,
           category: "Professional",
           name: "Windows 8 Weather and News App",
+          subtitle: "Default Windows 8 Weather & News Experience",
           company: "Microsoft",
           duration: "January 2012 – July 2012",
-          description: "Modern Windows 8 application for weather and news",
+          description: "Client layout and UI for Microsoft's Windows 8 Weather and News default applications. Delivered Metro-style interfaces for live weather, news feeds, and content-heavy screens used by a global audience of millions.",
           role: "UI Developer",
-          technologies: [".NET 2011", "jQuery", "HTML5", "CSS3"],
+          highlights: [
+            "Designed client layout modules for core native Windows 8 Weather and News applications",
+            "Implemented Modern/Metro UI patterns including live tiles, panoramic layouts, and responsive content regions",
+            "Built interfaces for real-time weather conditions, forecasts, and dynamic news article feeds",
+            "Optimized rendering performance under content-heavy payloads while maintaining pixel-perfect visual quality",
+            "Shipped production UI as part of Microsoft's default Windows 8 application suite"
+          ],
+          technologies: [".NET 2011", "jQuery", "HTML5", "CSS3", "JavaScript", "TFS", "Windows 8"],
           url: "https://www.microsoft.com/"
         }
       ]

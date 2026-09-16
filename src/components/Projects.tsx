@@ -134,7 +134,9 @@ export const Projects = () => {
             </motion.h3>
 
             <motion.div
-              className="grid md:grid-cols-2 lg:grid-cols-2 gap-8"
+              className={`grid md:grid-cols-2 lg:grid-cols-2 gap-8 ${
+                personalProjects.some((p: any) => p.id === hoveredId) ? 'items-start' : 'items-stretch'
+              }`}
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
@@ -148,6 +150,7 @@ export const Projects = () => {
                   setHoveredId={setHoveredId}
                   setSelectedProject={setSelectedProject}
                   itemVariants={itemVariants}
+                  sectionHovered={personalProjects.some((p: any) => p.id === hoveredId)}
                 />
               ))}
             </motion.div>
@@ -170,7 +173,9 @@ export const Projects = () => {
             </motion.h3>
 
             <motion.div
-              className="grid md:grid-cols-2 lg:grid-cols-2 gap-8"
+              className={`grid md:grid-cols-2 lg:grid-cols-2 gap-8 ${
+                professionalProjects.some((p: any) => p.id === hoveredId) ? 'items-start' : 'items-stretch'
+              }`}
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
@@ -184,6 +189,7 @@ export const Projects = () => {
                   setHoveredId={setHoveredId}
                   setSelectedProject={setSelectedProject}
                   itemVariants={itemVariants}
+                  sectionHovered={professionalProjects.some((p: any) => p.id === hoveredId)}
                 />
               ))}
             </motion.div>
@@ -203,24 +209,28 @@ export const Projects = () => {
 };
 
 // Separate component for project card
-const ProjectCard = ({ project, hoveredId, setHoveredId, setSelectedProject, itemVariants }: any) => {
+const ProjectCard = ({ project, hoveredId, setHoveredId, setSelectedProject, itemVariants, sectionHovered }: any) => {
   const isFriendLocator = project.name === 'FriendLocator';
-  
+  const isHovered = hoveredId === project.id;
+  const highlights = project.highlights || [];
+  const visibleHighlights = highlights.slice(0, 3);
+  const extraHighlights = highlights.slice(3);
+  const fillRow = !sectionHovered;
+
   return (
     <motion.div
       variants={itemVariants}
       onMouseEnter={() => setHoveredId(project.id)}
       onMouseLeave={() => setHoveredId(null)}
-      className="group"
+      className={`group ${fillRow ? 'h-full' : 'h-auto self-start'}`}
     >
       <motion.div
-        className={`glass-card rounded-2xl overflow-hidden h-full flex flex-col ${isFriendLocator ? 'cursor-pointer' : ''}`}
+        className={`glass-card rounded-2xl overflow-hidden flex flex-col ${fillRow ? 'h-full' : 'h-auto'} ${isFriendLocator ? 'cursor-pointer' : ''}`}
         whileHover={{ y: -5, backgroundColor: 'rgba(255, 255, 255, 0.12)' }}
-        transition={{ duration: 0.3 }}
+        transition={{ duration: 0.25 }}
         onClick={() => isFriendLocator && setSelectedProject(project)}
       >
-      {/* Project Header */}
-      <div className="p-6 flex-1 flex flex-col">
+      <div className={`p-6 flex flex-col ${fillRow ? 'flex-1' : ''}`}>
         <div className="flex items-start justify-between mb-2">
           <div>
             <h3 className="font-display text-xl font-bold text-white mb-1">{project.name}</h3>
@@ -266,25 +276,25 @@ const ProjectCard = ({ project, hoveredId, setHoveredId, setSelectedProject, ite
           )}
         </div>
 
-        {/* <p className="text-xs text-gray-400 mb-3">{project.duration}</p> */}
-        <p className="text-slate-300 text-sm mb-4 flex-1 leading-relaxed">{project.description}</p>
+        <p className={`text-slate-300 text-sm mb-4 leading-relaxed ${isHovered ? '' : 'line-clamp-3 min-h-[4.5rem]'}`}>
+          {project.description}
+        </p>
 
-        {project.highlights && (
-          <ul className="space-y-1.5 mb-4 pb-4 border-b border-white/10">
-            {project.highlights.slice(0, hoveredId === project.id ? project.highlights.length : 3).map((highlight: string, idx: number) => (
+        {highlights.length > 0 && (
+          <ul className={`space-y-1.5 mb-4 pb-4 border-b border-white/10 ${isHovered ? '' : 'min-h-[5.75rem]'}`}>
+            {(isHovered ? highlights : visibleHighlights).map((highlight: string, idx: number) => (
               <li key={idx} className="text-xs text-slate-300 flex items-start leading-relaxed">
                 <span className="text-cyan-300 mr-2">▸</span>
                 {highlight}
               </li>
             ))}
-            {hoveredId !== project.id && project.highlights.length > 3 && (
+            {!isHovered && extraHighlights.length > 0 && (
               <li className="text-xs text-slate-500 pl-4">Hover to see more</li>
             )}
           </ul>
         )}
 
-        {/* Technologies */}
-        <div className="flex flex-wrap gap-2">
+        <div className="mt-auto flex flex-wrap gap-2">
           {project.technologies.map((tech: string) => (
             <motion.span
               key={tech}

@@ -74,8 +74,8 @@ export const Hero = () => {
         <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl mx-auto mb-10">
           {[
             { label: 'Years building UI', value: '10+' },
-            { label: 'AI-native delivery', value: 'Cursor + Copilot' },
-            { label: 'Focus', value: 'React, IoT, PWA' },
+            { label: 'Industrial systems', value: 'IoT & SCADA HMI' },
+            { label: 'Focus', value: 'React, Telemetry, PWA' },
           ].map((stat) => (
             <div key={stat.label} className="glass-card rounded-2xl px-4 py-3">
               <p className="text-sm font-semibold text-white">{stat.value}</p>

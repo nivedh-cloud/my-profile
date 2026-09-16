@@ -5,6 +5,8 @@ import { SectionHeading } from './SectionHeading';
 export const Skills = () => {
   const categoryNames: Record<string, string> = {
     backend: 'Backend & Cloud',
+    iotScada: 'IoT & SCADA',
+    dataAndMapping: 'Data & Mapping',
   };
 
   const formatCategory = (key: string) => {

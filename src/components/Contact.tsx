@@ -24,8 +24,8 @@ export const Contact = () => {
   const socialLinks = [
     { icon: Mail, href: `mailto:${resumeData.email}`, label: 'Email' },
     { icon: Phone, href: `tel:${resumeData.phone}`, label: 'Phone' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Github, href: '#', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/jeevan-prabhath/', label: 'LinkedIn' },
+    { icon: Github, href: 'https://github.com/nivedh-cloud', label: 'GitHub' },
   ];
 
   return (
