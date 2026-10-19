@@ -1,7 +1,7 @@
 export const resumeData = {
   name: "P Jeevan Prabhath",
   email: "prabhath.jeevan@gmail.com",
-  phone: "+91 7981599688",
+  phone: "+91 9966429688",
   headline: "Technical Lead | Frontend Developer | IoT & SCADA Dashboards | React Ecosystem",
   tagline: "Technical Lead | React Developer | IoT & SCADA | 10+ Years Experience | Industrial Dashboards",
   experienceHeadline: {
