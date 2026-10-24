@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { SectionHeading } from './SectionHeading';
 
 export const Experience = () => {
-  const [expandedId, setExpandedId] = useState<number | null>(resumeData.experience[0]?.id ?? null);
+  const [expandedId, setExpandedId] = useState<number | null>(null);
 
   const containerVariants = {
     hidden: { opacity: 0 },
